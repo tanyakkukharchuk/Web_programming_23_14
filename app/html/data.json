@@ -1,0 +1,59 @@
+{
+    "data":[
+        {
+            "week": "30.05",
+            "revenue": 48,
+            "cost": 41
+        },
+        {
+            "week": "31.05",
+            "revenue": 53,
+            "cost": 43
+        },
+        {
+            "week": "01.06",
+            "revenue": 40,
+            "cost": 50
+        },
+        {
+            "week": "02.06",
+            "revenue": 50,
+            "cost": 45
+        },
+        {
+            "week": "03.06",
+            "revenue": 42,
+            "cost": 34
+        },
+        {
+            "week": "04.06",
+            "revenue": 56,
+            "cost": 49
+        },
+        {
+            "week": "05.06",
+            "revenue": 42,
+            "cost": 31
+        },
+        {
+            "week": "06.06",
+            "revenue": 51,
+            "cost": 49
+        },
+        {
+            "week": "07.06",
+            "revenue": 42,
+            "cost": 30
+        },
+        {
+            "week": "08.06",
+            "revenue": 50,
+            "cost": 51
+        },
+        {
+            "week": "09.06",
+            "revenue": 45,
+            "cost": 50
+        }
+    ]
+}

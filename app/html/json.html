@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgba(255, 26, 104, 1);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgba(255, 26, 104, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgba(255, 26, 104, 1);
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>WWW.CHARTJS3.COM (Chart JS 3.6.0)</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // ajax
+    const xmlhttp = new XMLHttpRequest();
+    const url = 'http://127.0.0.1:5500/app/html/data.json';
+    xmlhttp.open('GET', url, true);
+    xmlhttp.send();
+    xmlhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            const datapoints = JSON.parse(this.responseText);
+            const labelsweek = datapoints.data.map(function(index){
+                return index.week;
+            });
+            const revenue = datapoints.data.map(function(index){
+                return index.revenue;
+            });
+            const cost = datapoints.data.map(function(index){
+                return index.cost;
+            });
+            const profit = datapoints.data.map(function(index){
+                return index.profit;
+            });
+  var chart = new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+        pointRadius: 0,
+        backgroundColor: "rgba(89, 194, 230, 0.7)",
+        borderColor: "rgba(89, 194, 230, 0)",
+        data: yValues
+    },{
+        pointRadius: 0,
+        backgroundColor: "rgba(200, 227, 243, 0.7)",
+        borderColor: "rgba(200, 227, 243, 0)",
+        data: zValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 0, max:60}}],
+      xAxes: [{gridLines: {
+        display: false,
+      }
+    }]
+    }
+  }
+});
+        }
+    }
+    // setup 
+    
+    </script>
+
+  </body>
+</html>
